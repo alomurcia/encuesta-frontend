@@ -1,0 +1,53 @@
+<div class="encuestaContainer">
+  <h1>Formulario Encuesta</h1>
+  <form #encuestaForm="ngForm" (ngSubmit)="registrar()">
+    <div class="encuestaFormContainer">
+      <mat-form-field appearance="fill">
+        <mat-label>No. de Documento</mat-label>
+        <input
+          matInput
+          [(ngModel)]="encuesta.numDocumento"
+          name="numDocumento"
+          type="number"
+          required
+        />
+        <mat-error>No. de documento requerido!</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Email:</mat-label>
+        <input
+          matInput
+          [(ngModel)]="encuesta.email"
+          name="email"
+          type="email"
+          required
+        />
+        <mat-error>Email requerido!</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Comentarios:</mat-label>
+        <textarea
+          matInput
+          [(ngModel)]="encuesta.comentarios"
+          name="comentarios"
+        ></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Marca favorita de PC:</mat-label>
+        <mat-select [(ngModel)]="encuesta.idMarca" name="idMarca" required>
+          <mat-option *ngFor="let marca of marcas" [value]="marca.id">{{
+            marca.nombre
+          }}</mat-option>
+        </mat-select>
+        <mat-error>Marca favorita de PC es requerida!</mat-error>
+      </mat-form-field>
+    </div>
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="!encuestaForm.form.valid"
+    >
+      Registrar
+    </button>
+  </form>
+</div>

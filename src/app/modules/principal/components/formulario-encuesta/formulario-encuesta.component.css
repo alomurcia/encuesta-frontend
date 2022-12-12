@@ -1,0 +1,17 @@
+.encuestaContainer {
+  margin: 1em;
+}
+.encuestaFormContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.encuestaFormContainer > mat-form-field {
+  width: 48%;
+  margin-left: 8px;
+}
+@media only screen and (max-width: 600px) {
+  .encuestaFormContainer > mat-form-field {
+    width: 100%;
+  }
+}

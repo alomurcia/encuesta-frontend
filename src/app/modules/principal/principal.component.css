@@ -1,0 +1,12 @@
+.container {
+  margin: 1em;
+}
+.menuPrincipalContainer {
+  display: flex;
+  flex-flow: row;
+  list-style: none;
+}
+.itemMenuPrincipalContainer {
+  margin: 1em;
+  padding: 1em;
+}
